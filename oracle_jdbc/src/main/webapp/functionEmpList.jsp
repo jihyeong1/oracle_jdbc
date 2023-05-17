@@ -107,7 +107,7 @@
 		if(maxPage > lastPage){
 			maxPage = lastPage;
 		}
-		if(minPage > 1){
+		if(minPage > 1){ 
 	%>
 			<a href="<%=request.getContextPath()%>/functionEmpList.jsp?currentPage=<%=minPage-pagePerPage%>">ÀÌÀü</a>
 	<%		
