@@ -13,6 +13,25 @@
 	System.out.println(conn);
 	
 	/*
+	--salary+salary*commission_pct 결과가 null이 되지않도록 commission_pct가 null일때 null대신 0을 곱한다.
+	-- 어느 디비에 가도 적용됨
+	SELECT employee_id, salary, commission_pct, 
+	salary+salary*(case when commission_pct is null then 0 else commission_pct end) 실금액 
+	from employees;
+	
+	------------------------------다른 디비에서는 사용되지않음
+	-- case 표현식은 decode()함수를 사용하면 조금 더 간단히 표현할 수 있다.
+	SELECT employee_id, salary, commission_pct, 
+	salary+salary * decode(commission_pct, null, 0) 실금액 
+	from employees;
+	
+	-- null값 전용함수 nvl 사용하면
+	SELECT employee_id, salary, commission_pct, 
+	salary+salary * nvl(commission_pct, 0) 실금액 
+	from employees;
+	*/
+	
+	/*
 	-- nvl(값1, 값2) : 값1이 null이 아니면 값1을 반환, 값1이 null이면 값2를 반환한다
 	-- nvl2(값1, 값2, 값3) : 값1이 null아니면 값2반환, 값1이 null이면 값3을 반환
 	-- nullif(값1, 값2) : 값1과 값2가 같으면 null을 반환 (null이 아닌값이 null로 치환에 사용)
