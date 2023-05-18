@@ -3,6 +3,9 @@
 <%@ page import = "java.sql.*" %>  
 <%@ page import = "java.util.*" %>
 <%
+/* 분석함수를 사용, over 을 쓰면 원래 결과셋은 있고 그 뒤에 서브쿼리형식으로 결과셋이 붙어서 나오게된다.
+-- 따라서 원 결과셋은 깨지지않고 그대로 출력되며 over 로 만든 서브쿼리 집계또한 같이 출력될 수 있다.	*/
+
 		//currentPage 값 선언
 		int currentPage = 1;
 		if(request.getParameter("currentPage") != null){
