@@ -14,6 +14,7 @@
 		//rowPerPage 값 선언
 		int rowPerPage = 10;
 		
+	
 		// 디비연결
 		String driver = "oracle.jdbc.driver.OracleDriver";
 		String dburl = "jdbc:oracle:thin:@localhost:1521:xe";
